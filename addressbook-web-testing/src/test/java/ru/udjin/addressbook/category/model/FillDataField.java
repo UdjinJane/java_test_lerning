@@ -1,4 +1,4 @@
-package ru.udjin.addressbook.category;
+package ru.udjin.addressbook.category.model;
 
 public class FillDataField {
   private final String group_name;

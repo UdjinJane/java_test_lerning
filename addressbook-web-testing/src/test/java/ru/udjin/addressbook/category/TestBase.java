@@ -2,6 +2,7 @@ package ru.udjin.addressbook.category;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import ru.udjin.addressbook.category.appmanager.ApplicationManager;
 
 public class TestBase {
 

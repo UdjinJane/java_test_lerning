@@ -1,6 +1,7 @@
-package ru.udjin.addressbook.category;
+package ru.udjin.addressbook.category.tests;
 
 import org.testng.annotations.*;
+import ru.udjin.addressbook.category.TestBase;
 
 public class DeleteGroupTestCase  extends TestBase {
 
