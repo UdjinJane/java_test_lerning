@@ -12,3 +12,13 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+*.html
+addressbook-web-testing/build/reports/tests/test/index.html
+addressbook-web-testing/build/reports/tests/test/index.html
+addressbook-web-testing/build/reports/tests/test/packages/ru.udjin.addressbook.category.tests.html
+addressbook-web-testing/build/test-results/test/binary/output.bin
+addressbook-web-testing/build/test-results/test/binary/results.bin
+*.html
+addressbook-web-testing/build/test-results/test/TEST-ru.udjin.addressbook.category.tests.DeleteGroupTestCase.xml
+addressbook-web-testing/build/test-results/test/TEST-ru.udjin.addressbook.category.tests.AddGroupTestCase.xml
+addressbook-web-testing/build/test-results/test/TEST-ru.udjin.addressbook.category.tests.DeleteGroupTestCase.xml

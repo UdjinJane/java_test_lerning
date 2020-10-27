@@ -3,44 +3,29 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-139.12499999999994" y="3.0">ru.udjin.addressbook.category.FillDataField</node>
-    <node x="228.0" y="480.0">ru.udjin.addressbook.category.DeleteGroupTestCase</node>
-    <node x="113.4625" y="130.0">ru.udjin.addressbook.category.TestBase</node>
-    <node x="0.0" y="480.0">ru.udjin.addressbook.category.AddGroupTestCase</node>
+    <node x="0.0" y="497.0">ru.udjin.addressbook.category.tests.DeleteGroupTestCase</node>
+    <node x="258.0" y="497.0">ru.udjin.addressbook.category.tests.AddGroupTestCase</node>
+    <node x="137.0" y="345.0">ru.udjin.addressbook.category.tests.TestBase</node>
+    <node x="511.0" y="345.0">ru.udjin.addressbook.category.model.FillDataField</node>
+    <node x="0.0" y="0.0">ru.udjin.addressbook.category.appmanager.ApplicationManager</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="ru.udjin.addressbook.category.DeleteGroupTestCase" target="ru.udjin.addressbook.category.TestBase">
-      <point x="59.5" y="-29.0" />
-      <point x="406.5" y="455.0" />
-      <point x="350.58750000000003" y="455.0" />
-      <point x="101.62500000000003" y="150.0" />
-    </edge>
-    <edge source="ru.udjin.addressbook.category.AddGroupTestCase" target="ru.udjin.addressbook.category.TestBase">
+    <edge source="ru.udjin.addressbook.category.tests.AddGroupTestCase" target="ru.udjin.addressbook.category.tests.TestBase">
       <point x="0.0" y="-29.0" />
-      <point x="104.0" y="455.0" />
-      <point x="147.3375" y="455.0" />
-      <point x="-101.625" y="150.0" />
+      <point x="362.0" y="472.0" />
+      <point x="292.25" y="472.0" />
+      <point x="51.75" y="51.0" />
     </edge>
-    <edge source="ru.udjin.addressbook.category.AddGroupTestCase" target="ru.udjin.addressbook.category.FillDataField">
-      <point x="-69.33333333333331" y="-29.0" />
-      <point x="34.666666666666686" y="455.0" />
-      <point x="56.14166666666671" y="455.0" />
-      <point x="56.14166666666671" y="105.0" />
-      <point x="126.5416666666667" y="105.0" />
-      <point x="-59.33333333333334" y="40.0" />
-    </edge>
-    <edge source="ru.udjin.addressbook.category.TestBase" target="ru.udjin.addressbook.category.FillDataField">
-      <point x="-67.74999999999997" y="-150.0" />
-      <point x="181.21250000000003" y="105.0" />
-      <point x="185.87500000000006" y="105.0" />
-      <point x="0.0" y="40.0" />
+    <edge source="ru.udjin.addressbook.category.tests.DeleteGroupTestCase" target="ru.udjin.addressbook.category.tests.TestBase">
+      <point x="0.0" y="-29.0" />
+      <point x="119.0" y="472.0" />
+      <point x="188.75" y="472.0" />
+      <point x="-51.75" y="51.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="327.5" y="236.0" />
-  <SelectedNodes>
-    <node>ru.udjin.addressbook.category.FillDataField</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="1.0" x="328.0" y="236.0" />
+  <SelectedNodes />
   <Categories>
     <Category>Methods</Category>
   </Categories>
