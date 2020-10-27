@@ -2,7 +2,6 @@ package ru.udjin.addressbook.category.appmanager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.udjin.addressbook.category.model.FillDataField;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +9,7 @@ import static org.testng.Assert.fail;
 
 public class ApplicationManager {
 
-  private final NavigationHelper navigationHelper = new NavigationHelper();
+  private final SessionManager sessionManager = new SessionManager();
   FirefoxDriver wd;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -22,14 +21,8 @@ public class ApplicationManager {
     baseUrl = "https://www.google.com/";
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
-    navigationHelper.groupHelper = new GroupHelper(wd);
-    loginForm("admin", "secret");
-  }
-
-  public void loginForm(String username, String userpassword) {
-    navigationHelper.groupHelper.clearAndFillDatainForm(new FillDataField("user", username));
-    navigationHelper.groupHelper.clearAndFillDatainForm(new FillDataField("pass", userpassword));
-    navigationHelper.navigateByURL("//form[@id='LoginForm']/input[3]");
+    sessionManager.navigationHelper.groupHelper = new GroupHelper(wd);
+    sessionManager.loginForm("admin", "secret");
   }
 
   public void stop() {
@@ -74,10 +67,14 @@ public class ApplicationManager {
   }
 
   public GroupHelper getGroupHelper() {
-    return navigationHelper.groupHelper;
+    return sessionManager.navigationHelper.groupHelper;
   }
 
   public NavigationHelper getNavigationHelper() {
-    return navigationHelper;
+    return sessionManager.navigationHelper;
+  }
+
+  public SessionManager getSessionManager() {
+    return sessionManager;
   }
 }
