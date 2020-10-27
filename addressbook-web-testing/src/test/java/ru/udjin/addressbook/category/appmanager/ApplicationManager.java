@@ -8,8 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.fail;
 
-public class ApplicationManager {
-  FirefoxDriver wd;
+public class ApplicationManager extends GroupHelper {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -29,17 +28,8 @@ public class ApplicationManager {
     navigateByURL("//form[@id='LoginForm']/input[3]");
   }
 
-  public void clearAndFillDatainForm(FillDataField fillDataField) {
-    wd.findElement(By.name(fillDataField.getGroup_name())).clear();
-    wd.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
-  }
-
-  public void clickToElemnt(String s) {
-    wd.findElement(By.name(s)).click();
-  }
-
   public void navigateByURL(String s) {
-    wd.findElement(By.xpath(s)).click();
+    findInputAndClckByXPASS(s);
   }
 
   public void stop() {
@@ -83,15 +73,4 @@ public class ApplicationManager {
     }
   }
 
-  public void findInputAndClckByXPASS(String s) {
-    wd.findElement(By.xpath(s)).click();
-  }
-
-  public void selectCheckBox(String s) {
-    findInputAndClckByXPASS(s);
-  }
-
-  public void navigateAcrossLabelEllow(String labelUrlTxtLink) {
-    wd.findElement(By.linkText(labelUrlTxtLink)).click();
-  }
 }
