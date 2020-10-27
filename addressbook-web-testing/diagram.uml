@@ -3,29 +3,96 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="497.0">ru.udjin.addressbook.category.tests.DeleteGroupTestCase</node>
-    <node x="258.0" y="497.0">ru.udjin.addressbook.category.tests.AddGroupTestCase</node>
-    <node x="137.0" y="345.0">ru.udjin.addressbook.category.tests.TestBase</node>
-    <node x="511.0" y="345.0">ru.udjin.addressbook.category.model.FillDataField</node>
-    <node x="0.0" y="0.0">ru.udjin.addressbook.category.appmanager.ApplicationManager</node>
+    <node x="81.76041666666669" y="326.0">ru.udjin.addressbook.category.appmanager.NavigationHelper</node>
+    <node x="5.177083333333343" y="441.5">ru.udjin.addressbook.category.appmanager.SessionHelper</node>
+    <node x="0.0" y="956.0">ru.udjin.addressbook.category.tests.DeleteGroupTestCase</node>
+    <node x="264.8125" y="956.0">ru.udjin.addressbook.category.tests.AddGroupTestCase</node>
+    <node x="150.4489583333333" y="130.0">ru.udjin.addressbook.category.appmanager.GroupHelper</node>
+    <node x="107.42812500000002" y="804.0">ru.udjin.addressbook.category.tests.TestBase</node>
+    <node x="79.42812500000002" y="542.0">ru.udjin.addressbook.category.appmanager.ApplicationManager</node>
+    <node x="203.14583333333331" y="0.0">ru.udjin.addressbook.category.model.FillDataField</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="ru.udjin.addressbook.category.appmanager.ApplicationManager" target="ru.udjin.addressbook.category.appmanager.SessionHelper">
+      <point x="-109.58333333333337" y="-106.0" />
+      <point x="101.34479166666665" y="517.0" />
+      <point x="59.510416666666686" y="517.0" />
+      <point x="-68.66666666666667" y="29.0" />
+    </edge>
     <edge source="ru.udjin.addressbook.category.tests.AddGroupTestCase" target="ru.udjin.addressbook.category.tests.TestBase">
+      <point x="-69.33333333333331" y="-29.0" />
+      <point x="299.4791666666667" y="936.0" />
+      <point x="236.80312500000002" y="936.0" />
+      <point x="25.875" y="51.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.tests.AddGroupTestCase" target="ru.udjin.addressbook.category.model.FillDataField">
+      <point x="69.33333333333333" y="-29.0" />
+      <point x="438.1458333333333" y="936.0" />
+      <point x="431.9489583333333" y="936.0" />
+      <point x="431.9489583333333" y="105.0" />
+      <point x="351.47916666666663" y="105.0" />
+      <point x="59.33333333333334" y="40.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.SessionHelper" target="ru.udjin.addressbook.category.appmanager.NavigationHelper">
       <point x="0.0" y="-29.0" />
-      <point x="362.0" y="472.0" />
-      <point x="292.25" y="472.0" />
-      <point x="51.75" y="51.0" />
+      <point x="128.17708333333334" y="409.0" />
+      <point x="116.42708333333334" y="409.0" />
+      <point x="-69.33333333333334" y="29.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.ApplicationManager" target="ru.udjin.addressbook.category.appmanager.GroupHelper">
+      <point x="109.58333333333337" y="-106.0" />
+      <point x="320.5114583333334" y="517.0" />
+      <point x="317.8447916666667" y="517.0" />
+      <point x="317.8447916666667" y="301.0" />
+      <point x="376.28229166666665" y="301.0" />
+      <point x="90.33333333333331" y="73.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.ApplicationManager" target="ru.udjin.addressbook.category.appmanager.NavigationHelper">
+      <point x="21.91666666666663" y="-106.0" />
+      <point x="232.84479166666665" y="517.0" />
+      <point x="259.32916666666665" y="517.0" />
+      <point x="259.32916666666665" y="409.0" />
+      <point x="255.09375000000003" y="409.0" />
+      <point x="69.33333333333334" y="29.0" />
     </edge>
     <edge source="ru.udjin.addressbook.category.tests.DeleteGroupTestCase" target="ru.udjin.addressbook.category.tests.TestBase">
-      <point x="0.0" y="-29.0" />
-      <point x="119.0" y="472.0" />
-      <point x="188.75" y="472.0" />
-      <point x="-51.75" y="51.0" />
+      <point x="59.5" y="-29.0" />
+      <point x="178.5" y="936.0" />
+      <point x="185.05312500000002" y="936.0" />
+      <point x="-25.875" y="51.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.SessionHelper" target="ru.udjin.addressbook.category.model.FillDataField">
+      <point x="-68.66666666666669" y="-29.0" />
+      <point x="59.51041666666666" y="409.0" />
+      <point x="71.26041666666669" y="409.0" />
+      <point x="71.26041666666669" y="105.0" />
+      <point x="232.81249999999997" y="105.0" />
+      <point x="-59.33333333333334" y="40.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.NavigationHelper" target="ru.udjin.addressbook.category.appmanager.GroupHelper">
+      <point x="-2.8421709430404007E-14" y="-29.0" />
+      <point x="185.76041666666666" y="301.0" />
+      <point x="195.615625" y="301.0" />
+      <point x="-90.33333333333331" y="73.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.tests.TestBase" target="ru.udjin.addressbook.category.appmanager.ApplicationManager">
+      <point x="-69.0" y="-51.0" />
+      <point x="141.92812500000002" y="779.0" />
+      <point x="123.26145833333334" y="779.0" />
+      <point x="-87.66666666666669" y="106.0" />
+    </edge>
+    <edge source="ru.udjin.addressbook.category.appmanager.GroupHelper" target="ru.udjin.addressbook.category.model.FillDataField">
+      <point x="0.0" y="-73.0" />
+      <point x="285.9489583333333" y="105.0" />
+      <point x="292.1458333333333" y="105.0" />
+      <point x="0.0" y="40.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="328.0" y="236.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.8" x="592.375" y="533.75" />
+  <SelectedNodes>
+    <node>ru.udjin.addressbook.category.appmanager.SessionHelper</node>
+  </SelectedNodes>
   <Categories>
     <Category>Methods</Category>
   </Categories>

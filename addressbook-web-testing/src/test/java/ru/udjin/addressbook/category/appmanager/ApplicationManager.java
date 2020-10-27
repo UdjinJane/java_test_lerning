@@ -9,7 +9,7 @@ import static org.testng.Assert.fail;
 
 public class ApplicationManager {
 
-  private final SessionManager sessionManager = new SessionManager();
+  private final SessionHelper sessionHelper = new SessionHelper();
   FirefoxDriver wd;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,8 +21,8 @@ public class ApplicationManager {
     baseUrl = "https://www.google.com/";
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
-    sessionManager.navigationHelper.groupHelper = new GroupHelper(wd);
-    sessionManager.loginForm("admin", "secret");
+    sessionHelper.navigationHelper.groupHelper = new GroupHelper(wd);
+    sessionHelper.loginForm("admin", "secret");
   }
 
   public void stop() {
@@ -67,14 +67,14 @@ public class ApplicationManager {
   }
 
   public GroupHelper getGroupHelper() {
-    return sessionManager.navigationHelper.groupHelper;
+    return sessionHelper.navigationHelper.groupHelper;
   }
 
   public NavigationHelper getNavigationHelper() {
-    return sessionManager.navigationHelper;
+    return sessionHelper.navigationHelper;
   }
 
-  public SessionManager getSessionManager() {
-    return sessionManager;
+  public SessionHelper getSessionHelper() {
+    return sessionHelper;
   }
 }

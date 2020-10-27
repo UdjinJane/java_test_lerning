@@ -2,7 +2,7 @@ package ru.udjin.addressbook.category.appmanager;
 
 import ru.udjin.addressbook.category.model.FillDataField;
 
-public class SessionManager {
+public class SessionHelper {
   protected final NavigationHelper navigationHelper = new NavigationHelper();
 
   public void loginForm(String username, String userpassword) {
