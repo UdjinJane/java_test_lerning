@@ -1,4 +1,4 @@
-package ru.udjin.addressbook.category;
+package ru.udjin.addressbook.category.tests;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

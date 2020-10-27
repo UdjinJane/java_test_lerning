@@ -2,7 +2,6 @@ package ru.udjin.addressbook.category.tests;
 
 import org.testng.annotations.*;
 import ru.udjin.addressbook.category.model.FillDataField;
-import ru.udjin.addressbook.category.TestBase;
 
 public class AddGroupTestCase extends TestBase {
 
