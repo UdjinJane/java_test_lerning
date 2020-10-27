@@ -5,7 +5,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.udjin.addressbook.category.model.FillDataField;
 
 public class GroupHelper {
-  FirefoxDriver wd;
+  private FirefoxDriver wd;
+
+  public GroupHelper(FirefoxDriver wd) {
+    this.wd = wd;
+  }
 
   public void clearAndFillDatainForm(FillDataField fillDataField) {
     wd.findElement(By.name(fillDataField.getGroup_name())).clear();

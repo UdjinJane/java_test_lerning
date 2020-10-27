@@ -9,17 +9,21 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
-  private final GroupHelper groupHelper = new GroupHelper();
+
+  FirefoxDriver wd;
+// тут был Final, его нужно убрать
+  private GroupHelper groupHelper;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   public void init() {
     System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
-    groupHelper.wd = new FirefoxDriver();
+    wd = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
-    groupHelper.wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    groupHelper.wd.get("http://localhost/addressbook/");
+    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd.get("http://localhost/addressbook/");
+    groupHelper = new GroupHelper(wd);
     loginForm("admin", "secret");
   }
 
@@ -34,7 +38,7 @@ public class ApplicationManager {
   }
 
   public void stop() {
-    groupHelper.wd.quit();
+    wd.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
@@ -43,7 +47,7 @@ public class ApplicationManager {
 
   public boolean isElementPresent(By by) {
     try {
-      groupHelper.wd.findElement(by);
+      wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
       return false;
@@ -52,7 +56,7 @@ public class ApplicationManager {
 
   public boolean isAlertPresent() {
     try {
-      groupHelper.wd.switchTo().alert();
+      wd.switchTo().alert();
       return true;
     } catch (NoAlertPresentException e) {
       return false;
@@ -61,7 +65,7 @@ public class ApplicationManager {
 
   public String closeAlertAndGetItsText() {
     try {
-      Alert alert = groupHelper.wd.switchTo().alert();
+      Alert alert = wd.switchTo().alert();
       String alertText = alert.getText();
       if (acceptNextAlert) {
         alert.accept();
