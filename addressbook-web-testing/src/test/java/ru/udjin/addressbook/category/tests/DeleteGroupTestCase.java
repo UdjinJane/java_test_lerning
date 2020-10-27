@@ -8,8 +8,8 @@ public class DeleteGroupTestCase  extends TestBase {
   public void testDeleteGroupTestCase() throws Exception {
 
     app.navigateByURL("//a[@href='group.php']");
-    app.selectCheckBox("(//input[@name='selected[]'])[11]");
-    app.selectCheckBox("(//input[@name='delete'])[2]");
+    app.getGroupHelper().selectCheckBox("(//input[@name='selected[]'])[11]");
+    app.getGroupHelper().selectCheckBox("(//input[@name='delete'])[2]");
     app.navigateByURL("//a[@href='group.php']");
   }
 
