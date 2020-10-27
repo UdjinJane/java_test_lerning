@@ -1,7 +1,6 @@
 package ru.udjin.addressbook.category;
 
 import org.testng.annotations.*;
-import org.openqa.selenium.*;
 
 public class AddGroupTestCase extends TestBase {
 
@@ -17,7 +16,7 @@ public class AddGroupTestCase extends TestBase {
     clickToElemnt("group_footer");
     clearAndFillDatainForm(new FillDataField("group_footer", "test4"));
     clickToElemnt("submit");
-    driver.findElement(By.linkText("group page")).click();
+    navigateAcrossLabelEllow("group page");
   }
 
 }

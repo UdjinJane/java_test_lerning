@@ -26,7 +26,7 @@ public class TestBase {
 
   }
 
-  public void loginForm(String username, String userpassword) {
+  protected void loginForm(String username, String userpassword) {
     clearAndFillDatainForm(new FillDataField("user", username));
     clearAndFillDatainForm(new FillDataField("pass", userpassword));
     navigateByURL("//form[@id='LoginForm']/input[3]");
@@ -85,5 +85,17 @@ public class TestBase {
     } finally {
       acceptNextAlert = true;
     }
+  }
+
+  protected void findInputAndClckByXPASS(String s) {
+    driver.findElement(By.xpath(s)).click();
+  }
+
+  protected void selectCheckBox(String s) {
+    findInputAndClckByXPASS(s);
+  }
+
+  protected void navigateAcrossLabelEllow(String labelUrlTxtLink) {
+    driver.findElement(By.linkText(labelUrlTxtLink)).click();
   }
 }
