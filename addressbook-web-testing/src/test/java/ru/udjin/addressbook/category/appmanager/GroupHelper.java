@@ -4,20 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.udjin.addressbook.category.model.FillDataField;
 
-public class GroupHelper {
-  private FirefoxDriver wd;
+public class GroupHelper extends HelperBase{
 
   public GroupHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void clearAndFillDatainForm(FillDataField fillDataField) {
-    wd.findElement(By.name(fillDataField.getGroup_name())).clear();
-    wd.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
+    clearDataField(fillDataField);
+    sendKeyAndFillDataToField(fillDataField);
   }
 
-  public void clickToElemnt(String s) {
-    wd.findElement(By.name(s)).click();
+  private void sendKeyAndFillDataToField(FillDataField fillDataField) {
+    wd.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
   }
 
   public void findInputAndClckByXPASS(String s) {
