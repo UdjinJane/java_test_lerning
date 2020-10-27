@@ -7,16 +7,16 @@ public class AddGroupTestCase extends TestBase {
   @Test
   public void testUntitledTestCase() throws Exception {
 
-    navigateByURL("//a[@href='group.php']");
-    clickToElemnt("new");
-    clickToElemnt("group_name");
-    clearAndFillDatainForm(new FillDataField("group_name", "test4"));
-    clickToElemnt("group_header");
-    clearAndFillDatainForm(new FillDataField("group_header", "test4"));
-    clickToElemnt("group_footer");
-    clearAndFillDatainForm(new FillDataField("group_footer", "test4"));
-    clickToElemnt("submit");
-    navigateAcrossLabelEllow("group page");
+    app.navigateByURL("//a[@href='group.php']");
+    app.clickToElemnt("new");
+    app.clickToElemnt("group_name");
+    app.clearAndFillDatainForm(new FillDataField("group_name", "test4"));
+    app.clickToElemnt("group_header");
+    app.clearAndFillDatainForm(new FillDataField("group_header", "test4"));
+    app.clickToElemnt("group_footer");
+    app.clearAndFillDatainForm(new FillDataField("group_footer", "test4"));
+    app.clickToElemnt("submit");
+    app.navigateAcrossLabelEllow("group page");
   }
 
 }
