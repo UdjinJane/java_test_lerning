@@ -8,17 +8,17 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
-  protected WebDriver driver;
+  FirefoxDriver wd;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   protected void init() {
     System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
-    driver = new FirefoxDriver();
+    wd = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    driver.get("http://localhost/addressbook/");
+    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd.get("http://localhost/addressbook/");
     loginForm("admin", "secret");
   }
 
@@ -29,20 +29,20 @@ public class ApplicationManager {
   }
 
   protected void clearAndFillDatainForm(FillDataField fillDataField) {
-    driver.findElement(By.name(fillDataField.getGroup_name())).clear();
-    driver.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
+    wd.findElement(By.name(fillDataField.getGroup_name())).clear();
+    wd.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
   }
 
   protected void clickToElemnt(String s) {
-    driver.findElement(By.name(s)).click();
+    wd.findElement(By.name(s)).click();
   }
 
   protected void navigateByURL(String s) {
-    driver.findElement(By.xpath(s)).click();
+    wd.findElement(By.xpath(s)).click();
   }
 
   protected void stop() {
-    driver.quit();
+    wd.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
@@ -51,7 +51,7 @@ public class ApplicationManager {
 
   private boolean isElementPresent(By by) {
     try {
-      driver.findElement(by);
+      wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
       return false;
@@ -60,7 +60,7 @@ public class ApplicationManager {
 
   private boolean isAlertPresent() {
     try {
-      driver.switchTo().alert();
+      wd.switchTo().alert();
       return true;
     } catch (NoAlertPresentException e) {
       return false;
@@ -69,7 +69,7 @@ public class ApplicationManager {
 
   private String closeAlertAndGetItsText() {
     try {
-      Alert alert = driver.switchTo().alert();
+      Alert alert = wd.switchTo().alert();
       String alertText = alert.getText();
       if (acceptNextAlert) {
         alert.accept();
@@ -83,7 +83,7 @@ public class ApplicationManager {
   }
 
   protected void findInputAndClckByXPASS(String s) {
-    driver.findElement(By.xpath(s)).click();
+    wd.findElement(By.xpath(s)).click();
   }
 
   protected void selectCheckBox(String s) {
@@ -91,6 +91,6 @@ public class ApplicationManager {
   }
 
   protected void navigateAcrossLabelEllow(String labelUrlTxtLink) {
-    driver.findElement(By.linkText(labelUrlTxtLink)).click();
+    wd.findElement(By.linkText(labelUrlTxtLink)).click();
   }
 }
