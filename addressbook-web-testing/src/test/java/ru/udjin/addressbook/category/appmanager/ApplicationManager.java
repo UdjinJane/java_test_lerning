@@ -10,9 +10,8 @@ import static org.testng.Assert.fail;
 
 public class ApplicationManager {
 
+  private final NavigationHelper navigationHelper = new NavigationHelper();
   FirefoxDriver wd;
-// тут был Final, его нужно убрать
-  private GroupHelper groupHelper;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -23,18 +22,14 @@ public class ApplicationManager {
     baseUrl = "https://www.google.com/";
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
-    groupHelper = new GroupHelper(wd);
+    navigationHelper.groupHelper = new GroupHelper(wd);
     loginForm("admin", "secret");
   }
 
   public void loginForm(String username, String userpassword) {
-    groupHelper.clearAndFillDatainForm(new FillDataField("user", username));
-    groupHelper.clearAndFillDatainForm(new FillDataField("pass", userpassword));
-    navigateByURL("//form[@id='LoginForm']/input[3]");
-  }
-
-  public void navigateByURL(String s) {
-    groupHelper.findInputAndClckByXPASS(s);
+    navigationHelper.groupHelper.clearAndFillDatainForm(new FillDataField("user", username));
+    navigationHelper.groupHelper.clearAndFillDatainForm(new FillDataField("pass", userpassword));
+    navigationHelper.navigateByURL("//form[@id='LoginForm']/input[3]");
   }
 
   public void stop() {
@@ -79,6 +74,10 @@ public class ApplicationManager {
   }
 
   public GroupHelper getGroupHelper() {
-    return groupHelper;
+    return navigationHelper.groupHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }

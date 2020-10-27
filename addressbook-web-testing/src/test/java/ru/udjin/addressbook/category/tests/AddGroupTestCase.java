@@ -8,7 +8,7 @@ public class AddGroupTestCase extends TestBase {
   @Test
   public void testUntitledTestCase() throws Exception {
 
-    app.navigateByURL("//a[@href='group.php']");
+    app.getNavigationHelper().navigateByURL("//a[@href='group.php']");
     app.getGroupHelper().clickToElemnt("new");
     app.getGroupHelper().clickToElemnt("group_name");
     app.getGroupHelper().clearAndFillDatainForm(new FillDataField("group_name", "test4"));
