@@ -1,18 +1,12 @@
 package ru.udjin.addressbook.category;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.*;
-
 import static org.testng.Assert.*;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
-
-public class KatalonGroupTest {
+public class AddGroupTestCase {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -25,30 +19,42 @@ public class KatalonGroupTest {
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     driver.get("http://localhost/addressbook/");
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys("admin");
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys("secret");
-    driver.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    loginForm("admin", "secret");
+
+  }
+
+  private void loginForm(String username, String userpassword) {
+    clearAndFillDatainForm(new FillDataField("user", username));
+    clearAndFillDatainForm(new FillDataField("pass", userpassword));
+    navigateByURL("//form[@id='LoginForm']/input[3]");
   }
 
   @Test
   public void testUntitledTestCase() throws Exception {
 
-    driver.findElement(By.xpath("//a[@href='group.php']")).click();
-    driver.findElement(By.name("new")).click();
-    driver.findElement(By.name("group_name")).click();
-    driver.findElement(By.name("group_name")).clear();
-    driver.findElement(By.name("group_name")).sendKeys("test3");
-    driver.findElement(By.xpath("//form[@action='/addressbook/group.php']")).click();
-    driver.findElement(By.name("group_header")).click();
-    driver.findElement(By.name("group_header")).clear();
-    driver.findElement(By.name("group_header")).sendKeys("test3");
-    driver.findElement(By.name("group_footer")).click();
-    driver.findElement(By.name("group_footer")).clear();
-    driver.findElement(By.name("group_footer")).sendKeys("test3");
-    driver.findElement(By.name("submit")).click();
+    navigateByURL("//a[@href='group.php']");
+    clickToElemnt("new");
+    clickToElemnt("group_name");
+    clearAndFillDatainForm(new FillDataField("group_name", "test4"));
+    clickToElemnt("group_header");
+    clearAndFillDatainForm(new FillDataField("group_header", "test4"));
+    clickToElemnt("group_footer");
+    clearAndFillDatainForm(new FillDataField("group_footer", "test4"));
+    clickToElemnt("submit");
     driver.findElement(By.linkText("group page")).click();
+  }
+
+  private void clearAndFillDatainForm(FillDataField fillDataField) {
+    driver.findElement(By.name(fillDataField.getGroup_name())).clear();
+    driver.findElement(By.name(fillDataField.getGroup_name())).sendKeys(fillDataField.getTest4());
+  }
+
+  private void clickToElemnt(String s) {
+    driver.findElement(By.name(s)).click();
+  }
+
+  private void navigateByURL(String s) {
+    driver.findElement(By.xpath(s)).click();
   }
 
   @AfterClass(alwaysRun = true)

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.udjin.addressbook.category.AddGroupTestCase" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-27T05:59:06" hostname="DESKTOP-6CPA1R7" time="1.001">
+  <properties/>
+  <testcase name="testUntitledTestCase" classname="ru.udjin.addressbook.category.AddGroupTestCase" time="1.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1603778341792	geckodriver	INFO	Listening on 127.0.0.1:36855
+1603778342821	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Udjin\\AppData\\Local\\Temp\\rust_mozprofileT0RzZh"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1603778345664	Marionette	INFO	Listening on port 63021
+1603778345958	Marionette	WARN	TLS certificate errors will be ignored for this session
+окт. 27, 2020 3:59:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
