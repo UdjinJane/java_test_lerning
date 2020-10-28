@@ -11,6 +11,7 @@ public class TestBase {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
+   //  app.stop();
     app.init();
 
   }
