@@ -5,6 +5,7 @@ public class FillDataField {
   private final String test4;
 
   public FillDataField(String group_name, String test4) {
+
     this.group_name = group_name;
     this.test4 = test4;
   }

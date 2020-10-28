@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
@@ -28,13 +29,20 @@ public class ApplicationManager {
   public void init() {
 
 
-    if (browser==BrowserType.FIREFOX) {
+    if (browser.equals(BrowserType.FIREFOX)) {
       // Это тоже вариант. Если не в корне проекта запускающие браузер файлы.
       // System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
       wd = new FirefoxDriver();
-    } else if (browser==BrowserType.CHROME) {wd = new ChromeDriver();}
-      else if (browser==BrowserType.EDGE){wd = new EdgeDriver();}
-    else if (browser==BrowserType.IE){wd = new InternetExplorerDriver();}
+    } else if (browser.equals(BrowserType.CHROME)) {
+      wd = new ChromeDriver();
+    } else if (browser.equals(BrowserType.EDGE)) {
+      wd = new EdgeDriver();
+    } else if (browser.equals(BrowserType.IE)) {
+      wd = new InternetExplorerDriver();
+    } else if (browser.equals(BrowserType.OPERA)) {
+      wd = new OperaDriver();
+    }
+
 
 
     baseUrl = "https://www.google.com/";

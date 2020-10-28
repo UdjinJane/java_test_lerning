@@ -11,7 +11,7 @@ public class AddGroupTestCase extends TestBase {
     app.getNavigationHelper().navigateByURL("//a[@href='group.php']");
     app.getGroupHelper().clickToElemnt("new");
     app.getGroupHelper().clickToElemnt("group_name");
-    app.getGroupHelper().clearAndFillDatainForm(new FillDataField("group_name", "test4"));
+    app.getGroupHelper().clearAndFillDatainForm(new FillDataField("group_name", "test5"));
     app.getGroupHelper().clickToElemnt("group_header");
     app.getGroupHelper().clearAndFillDatainForm(new FillDataField("group_header", "test4"));
     app.getGroupHelper().clickToElemnt("group_footer");

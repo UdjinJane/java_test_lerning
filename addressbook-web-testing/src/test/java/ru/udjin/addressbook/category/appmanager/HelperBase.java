@@ -18,4 +18,8 @@ public class HelperBase {
   public void clickToElemnt(String s) {
     wd.findElement(By.name(s)).click();
   }
+
+  public boolean isThereAGroup() {
+    return true;
+  }
 }
