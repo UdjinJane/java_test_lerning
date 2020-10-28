@@ -29,7 +29,8 @@ public class ApplicationManager {
 
 
     if (browser==BrowserType.FIREFOX) {
-      System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
+      // Это тоже вариант. Если не в корне проекта запускающие браузер файлы.
+      // System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
       wd = new FirefoxDriver();
     } else if (browser==BrowserType.CHROME) {wd = new ChromeDriver();}
       else if (browser==BrowserType.EDGE){wd = new EdgeDriver();}
