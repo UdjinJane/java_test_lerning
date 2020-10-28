@@ -1,7 +1,11 @@
 package ru.udjin.addressbook.category.appmanager;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,14 +14,22 @@ import static org.testng.Assert.fail;
 public class ApplicationManager {
 
   private final SessionHelper sessionHelper = new SessionHelper();
-  FirefoxDriver wd;
+  WebDriver wd;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   public void init() {
-    System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
-    wd = new FirefoxDriver();
+
+    String browser = BrowserType.FIREFOX;
+    if (browser==BrowserType.FIREFOX) {
+      System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
+      wd = new FirefoxDriver();
+    } else if (browser==BrowserType.CHROME) {wd = new ChromeDriver();}
+      else if (browser==BrowserType.EDGE){wd = new EdgeDriver();}
+    else if (browser==BrowserType.IE){wd = new InternetExplorerDriver();}
+
+
     baseUrl = "https://www.google.com/";
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
