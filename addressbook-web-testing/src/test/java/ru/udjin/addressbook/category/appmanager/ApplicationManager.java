@@ -18,10 +18,16 @@ public class ApplicationManager {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
+  private String browser;
+
+  public ApplicationManager(String browser) {
+
+    this.browser = browser;
+  }
 
   public void init() {
 
-    String browser = BrowserType.FIREFOX;
+
     if (browser==BrowserType.FIREFOX) {
       System.setProperty("webdriver.gecko.driver", "C:\\java\\java_code\\java_test_lerning\\addressbook-web-testing\\geckodriver.exe");
       wd = new FirefoxDriver();
